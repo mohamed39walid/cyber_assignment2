@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <nav style="background: linear-gradient(to right, #3a3f9b, #4b256b); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; color: white; font-family: 'Segoe UI', sans-serif;">
-        <div style="font-weight: bold; font-size: 1.5rem;">
-          Cyber Security Assignment 2
+    <nav class="navbar">
+        <div class="nav-logo">
+            <h1>Cyber Security Assignment 2</h1>
         </div>
-        <div style="display: flex; gap: 1.5rem; font-size: 1rem;">
-          <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-          <a href="sha1/sha1.html" style="color: white; text-decoration: none;">SHA-1</a>
-          <a href="rsa.html" style="color: white; text-decoration: none;">RSA</a>
-          <a href="ctr.html" style="color: white; text-decoration: none;">CTR</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="sha1/sha1.html" class="nav-link">SHA-1</a>
+            <a href="rsa.html" class="nav-link">RSA</a>
+            <a href="ctr.html" class="nav-link">CTR</a>
         </div>
-      </nav>
-      
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <section class="hero">
         <h2>Welcome to the Cryptography Hub</h2>
@@ -45,5 +48,14 @@
         <p>&copy; Mohamed Walid, Marwan Mohamed, Mohamed Herms, Yassen Mohamed, Mostafa Khaled, Mohamed Adel</p>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

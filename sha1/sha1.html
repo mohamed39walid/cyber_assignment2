@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sha1</title>
+    <title>SHA-1</title>
     <link rel="stylesheet" href="sha1.css">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="nav-logo">
-          <h1>Cyber Security Assignment 2</h1>
+            <h1>Cyber Security Assignment 2</h1>
         </div>
-        <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="sha1.html">SHA-1</a></li>
-          <li><a href="../rsa/rsa.html">RSA</a></li>
-          <li><a href="../ctr/ctr.html">CTR</a></li>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="sha1.html">SHA-1</a></li>
+            <li><a href="../rsa/rsa.html">RSA</a></li>
+            <li><a href="../ctr/ctr.html">CTR</a></li>
         </ul>
-      </nav>
-      
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
     <div class="hash-container">
         <h2>Enter the text to get hashed:</h2>
         <div class="input-group">
@@ -31,6 +34,14 @@
     </div>
 
     <script src="sha1.js"></script>
-</body>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
 </html>
