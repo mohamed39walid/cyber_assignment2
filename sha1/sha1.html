@@ -9,22 +9,26 @@
 </head>
 
 <body>
-    <nav>
-        <h1>Cyber Securiy Assignment 2</h1>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="sha1/sha1.html">SHA-1</a></li>
-            <li>RSA</li>
-            <li>CTR</li>
+    <nav class="navbar">
+        <div class="nav-logo">
+          <h1>Cyber Security Assignment 2</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sha1.html">SHA-1</a></li>
+          <li><a href="../rsa/rsa.html">RSA</a></li>
+          <li><a href="../ctr/ctr.html">CTR</a></li>
         </ul>
-    </nav>
-
-    <p>Enter the text to get hashed:</p>
-    <input type="text" id="shaInput" placeholder="Enter text">
-    <button id="hashButton">Hash</button>
-    <p id="result"></p>
-
-
+      </nav>
+      
+    <div class="hash-container">
+        <h2>Enter the text to get hashed:</h2>
+        <div class="input-group">
+            <input type="text" id="shaInput" placeholder="Enter text">
+            <button id="hashButton">Hash</button>
+        </div>
+        <div id="result"></div>
+    </div>
 
     <script src="sha1.js"></script>
 </body>

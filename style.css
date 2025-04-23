@@ -22,16 +22,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
   
   nav h1 {
     font-size: 24px;
+    flex: 1 1 100%;
+    margin-bottom: 10px;
   }
   
   nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
   }
   
   nav ul li {
@@ -94,5 +99,78 @@
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    nav ul {
+      justify-content: flex-start;
+    }
+  
+    .hero h2 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .info-section {
+      padding: 20px;
+      margin: 20px 15px;
+    }
+  
+    .info-section h3 {
+      font-size: 20px;
+    }
+  
+    .info-section p {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav h1 {
+      font-size: 18px;
+    }
+  
+    .hero h2 {
+      font-size: 24px;
+    }
+  
+    .hero p {
+      font-size: 15px;
+    }
+  
+    .info-section {
+      padding: 15px;
+    }
+  
+    .info-section h3 {
+      font-size: 18px;
+    }
+  
+    .info-section p {
+      font-size: 14px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    nav ul li {
+      font-size: 14px;
+    }
   }
   
