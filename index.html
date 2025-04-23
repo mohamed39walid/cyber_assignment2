@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Cyber Securiy Assignment 2</h1>
+        <ul>
+            <li>Home</li>
+            <li><a href="sha1/sha1.html">SHA-1</a></li>
+            <li>RSA</li>
+            <li>CTR</li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Welcome to the Cryptography Hub</h2>
+        <p>Dive into the world of secure communication with hands-on tools and explanations.</p>
+    </section>
+
+    <section class="info-section">
+        <h3>🔐 SHA-1 (Secure Hash Algorithm 1)</h3>
+        <p>SHA-1 is a cryptographic hash function that produces a 160-bit (20-byte) hash value. It's mainly used to ensure data integrity. Although now considered broken for high-security use cases, it was widely adopted in applications like SSL certificates and Git versioning.</p>
+    </section>
+
+    <section class="info-section">
+        <h3>🔐 RSA Using LCG</h3>
+        <p>RSA is a public-key cryptographic algorithm that relies on the hardness of factoring large integers. LCG (Linear Congruential Generator) can be used to generate pseudo-random prime numbers needed for key generation. However, using LCG for cryptographic purposes is not recommended in practice due to predictability.</p>
+    </section>
+
+    <section class="info-section">
+        <h3>🔐 CTR Mode Using LCG</h3>
+        <p>CTR (Counter) mode turns a block cipher into a stream cipher. Instead of a random IV, a counter is used for encryption. LCG can generate these counter values, but like with RSA, using LCG in real cryptographic contexts requires caution due to weak randomness.</p>
+    </section>
+
+    <footer>
+        <p>&copy; Mohamed Walid, Marwan Mohamed, Mohamed Herms, Yassen Mohamed, Mostafa Khaled, Mohamed Adel</p>
+    </footer>
+
+</body>
+</html>
