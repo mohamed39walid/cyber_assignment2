@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RSA Encryption with LCG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <h1>Cyber Security Assignment 2</h1>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../sha1/sha1.html">SHA-1</a></li>
+      <li><a href="Rsa_lcg.html">RSA (LCG)</a></li>
+      <li><a href="../RSA/rsa.html">RSA</a></li>
+      <li><a href="../ctr/ctr.html">CTR</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="hash-container">
+    <h1>RSA Using LCG</h1>
+    <h2>Enter the text to encrypt and decrypt:</h2>
+    <div class="input-group">
+      <input type="text" id="plainText" placeholder="Enter text">
+      <button onclick="encryptAndDecrypt()">Encrypt & Decrypt</button>
+    </div>
+
+    <div id="encryptOutput" class="result-box"></div>
+    <div id="decryptOutput" class="result-box"></div>
+  </div>
+
+  <script src="RSA_lcg.js"></script>
+  <script>
+    // Responsive hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Main encrypt & decrypt flow
+    function encryptAndDecrypt() {
+      const plainText = document.getElementById("plainText").value.trim();
+      if (!plainText) {
+        alert('Please enter some text!');
+        return;
+      }
+
+      try {
+        const encrypted = encryptTextBase64Lcg(plainText, publicKeyLcg);
+        const decrypted = decryptTextBase64Lcg(encrypted, privateKeyLcg);
+
+        document.getElementById("encryptOutput").innerHTML = `<strong>🔒 Encrypted:</strong> ${encrypted}`;
+        document.getElementById("decryptOutput").innerHTML = `<strong>🔓 Decrypted:</strong> ${decrypted}`;
+      } catch (err) {
+        console.error(err);
+        alert("Error: " + err.message);
+      }
+    }
+  </script>
+</body>
+</html>
